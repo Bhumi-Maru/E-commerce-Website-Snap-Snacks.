@@ -1,0 +1,28 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1em;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+.search-bar button {
+  padding: 0.5em 1em;
+  margin-left: 1em;
+  background: tomato;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

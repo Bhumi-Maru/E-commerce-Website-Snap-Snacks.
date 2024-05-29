@@ -1,0 +1,36 @@
+.food-display {
+  margin-top: 30px;
+}
+
+.food-display h2 {
+  font-size: max(2vw, 24px);
+  font-weight: 600;
+}
+
+.food-display-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  margin-top: 30px;
+  gap: 30px;
+  row-gap: 50px;
+}
+
+.food-display-search-btn {
+  display: flex;
+  justify-content: center;
+}
+
+input[type="search"] {
+  padding: 11px 20px;
+  width: 400px;
+  outline: none;
+}
+
+.food-display-search-btn button {
+  font-size: 18px;
+  padding: 10px 20px;
+  color: white;
+  background-color: rgb(225, 76, 49);
+  border: 1px solid rgb(225, 76, 49);
+  /* border-radius: 20px; */
+}
