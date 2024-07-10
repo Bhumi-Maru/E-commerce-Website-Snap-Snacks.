@@ -26,7 +26,47 @@ export const ExploreMenu = ({ category, setCategory }) => {
           ←
         </button>
         <div className="explore-menu-list" ref={menuRef}>
-          {menu_list.map((item, index) => (
+          {menu_list.map((item, index) => /* Featured.css */
+.card {
+  border: 1px solid #ccc;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  text-align: left;
+  height: 40px;
+  line-height: 20px;
+  color: #2c414c;
+  white-space: initial;
+  font-size: 14px;
+  letter-spacing: initial;
+}
+
+.card-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.feature-product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+  margin: 20px 0px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.feature-product::-webkit-scrollbar {
+  display: none;
+}
+(
             <div
               onClick={() =>
                 setCategory((prev) =>

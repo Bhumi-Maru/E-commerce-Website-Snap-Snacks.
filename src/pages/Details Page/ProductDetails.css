@@ -6,10 +6,10 @@
 }
 
 .product-details .product-details-detail {
-  margin-top: 20px;
+  margin-top: -10px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 .product-details .product-details-img img {
   width: 360px;
@@ -78,4 +78,22 @@
 
 .goToCart-btn:hover {
   background-color: tomato;
+}
+
+/*  */
+
+.more-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.more-product {
+  padding: 10px;
+  text-align: center;
+}
+
+.more-product image {
+  max-width: 100%;
+  height: auto;
 }

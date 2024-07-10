@@ -30,11 +30,11 @@
   margin: 20px 0px;
   overflow-x: scroll;
   scroll-behavior: smooth;
-  scrollbar-width: none; /* For Firefox */
+  scrollbar-width: none;
 }
 
 .explore-menu-list::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Opera */
+  display: none;
 }
 
 .explore-menu-list-item img {
@@ -94,7 +94,7 @@
   font-weight: bolder;
   background-color: rgb(225, 76, 49);
   border-radius: 50px;
-  padding: 0px 20px;
+  padding: 6px 20px;
   color: white;
 }
 

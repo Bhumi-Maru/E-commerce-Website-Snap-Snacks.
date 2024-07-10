@@ -53,7 +53,7 @@ export const Cart = () => {
       {loading ? (
         <div className="loading-container">
           <img
-            src="https://github.com/rinkuv37/Ecommerce-Website-React/blob/main/src/assets/images/loading.gif?raw=true"
+            src="https://nest-frontend-v6.netlify.app/assets/imgs/theme/loading.gif"
             alt="Loading"
           />
         </div>
@@ -102,6 +102,8 @@ export const Cart = () => {
                       <hr />
                     </div>
                   );
+                } else {
+                  `<h2>Result</h2>`;
                 }
                 return null;
               })}
@@ -147,11 +149,17 @@ export const Cart = () => {
               </div>
             </div>
 
-            <div className="arrow-btn">
-              <div className="left-arrow" onClick={() => navigate(-1)}>
+            <div className="arrow-btn1">
+              <div
+                className="arrow-btn left-arrow"
+                onClick={() => navigate(-1)}
+              >
                 ←
               </div>
-              <div className="right-arrow" onClick={() => navigate(1)}>
+              <div
+                className="arrow-btn right-arrow"
+                onClick={() => navigate(1)}
+              >
                 →
               </div>
             </div>

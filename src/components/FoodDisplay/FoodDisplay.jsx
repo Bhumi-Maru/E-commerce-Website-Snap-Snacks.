@@ -50,6 +50,7 @@ const FoodDisplay = ({ category }) => {
       <h2 style={{ marginTop: "30px" }}>Top dishes near you...</h2>
       <div className="food-display-list">
         {searchData.map((item, index) => {
+          // {console.log(category, item.category)}
           if (category === "All" || category === item.category) {
             return (
               <Link key={index} to={`/product/${item._id}`}>

@@ -1,16 +1,14 @@
 import React from "react";
 import "./AppDownload.css";
 import { Link } from "react-router-dom";
+import { assets } from "../../assets/assets";
 
 const AppDownload = () => {
   return (
-    <div className="section" id="app-download">
+    <div className="section" id="app-download" style={{ marginTop: "200px" }}>
       <div className="container">
         <div className="visual">
-          <img
-            src="https://raw.githubusercontent.com/programmercloud/foodlover/main/img/app.png"
-            alt="App Preview"
-          />
+          <img src={assets.app} alt="App Preview" />
         </div>
 
         <div className="text">

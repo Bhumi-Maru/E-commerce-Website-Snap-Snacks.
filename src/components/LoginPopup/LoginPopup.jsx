@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { app } from "./Login";
 
-const LoginPopup = ({ setShowLogin }) => {
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+const LoginPopup = ({ setShowLogin, setUser }) => {
   const [currentState, setCurrentState] = useState("Login");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,6 +31,23 @@ const LoginPopup = ({ setShowLogin }) => {
     setEmail("");
     setPassword("");
     setAgreeToTerms(false);
+  }
+
+  function signInWithGoogle() {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        // console.log(user);
+        setUser(user);
+        setShowLogin(false);
+        alert("Sign In Successfully With Google");
+        setTimeout(() => {
+          alert(`Welcome to Snap Snacks. ${user.displayName}`);
+        }, 2000);
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
   }
 
   return (
@@ -67,6 +89,11 @@ const LoginPopup = ({ setShowLogin }) => {
 
         <button type="submit">
           {currentState === "Sign Up" ? "Create account" : "Login"}
+        </button>
+        <button type="button" onClick={signInWithGoogle}>
+          {currentState === "Sign Up With Google"
+            ? "Create account"
+            : "Login  With Google"}
         </button>
 
         <div className="login-popup-condition">

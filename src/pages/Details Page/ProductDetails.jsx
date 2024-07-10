@@ -3,6 +3,7 @@ import "./ProductDetails.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
 import { assets } from "../../assets/assets";
+import FoodItem from "../../components/FoodItem/FoodItem";
 
 const ProductDetails = () => {
   const [loading, setLoading] = useState(true);
@@ -29,7 +30,7 @@ const ProductDetails = () => {
       {loading ? (
         <div className="loading-container">
           <img
-            src="https://github.com/rinkuv37/Ecommerce-Website-React/blob/main/src/assets/images/loading.gif?raw=true"
+            src="https://nest-frontend-v6.netlify.app/assets/imgs/theme/loading.gif"
             alt="Loading"
           />
         </div>
@@ -64,7 +65,7 @@ const ProductDetails = () => {
                       src={assets.remove_icon_red}
                       alt="Remove from cart"
                     />
-                    <p>{cartItems[id]}</p>
+                    <p style={{position:"relative" , top:"0px" , fontSize:"20px"}}>{cartItems[id]}</p>
                     <img
                       onClick={() => addToCart(id)}
                       src={assets.add_icon_green}
@@ -83,16 +84,40 @@ const ProductDetails = () => {
             </div>
           </div>
 
-          <div className="arrow-btn">
-            <div className="left-arrow" onClick={() => navigate(-1)}>
-              ←
-            </div>
-            <div className="right-arrow" onClick={() => navigate(1)}>
-              →
+          {/* Displaying more products */}
+          <div
+            className="more-products-container"
+            style={{ marginTop: "100px" }}
+          >
+            <div className="more-products">
+              {food_list.map((item) => (
+                <div
+                  key={item._id}
+                  className="food-item-clickable"
+                  onClick={() => navigate(`/product/${item._id}`)}
+                >
+                  <FoodItem
+                    id={item._id}
+                    name={item.name}
+                    description={item.description}
+                    price={item.price}
+                    image={item.image}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </>
       )}
+
+      <div className="arrow-btn">
+        <div className="left-arrow" onClick={() => navigate(-1)}>
+          ←
+        </div>
+        <div className="right-arrow" onClick={() => navigate(1)}>
+          →
+        </div>
+      </div>
     </>
   );
 };

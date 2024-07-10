@@ -1,10 +1,10 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { food_list } from "../assets/assets";
 
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
-  const [cartItems, setCartItems] = useState({});
+  const [cartItems, setCartItems] = useState(0);
 
   const addToCart = (itemId) => {
     if (!cartItems[itemId]) {
@@ -29,6 +29,10 @@ const StoreContextProvider = (props) => {
 
     return totalAmount;
   };
+
+  // useEffect(() => {
+  //   console.log(cartItems);
+  // }, [cartItems]);
 
   const getTotalCartItems = () => {
     let totalItems = 0;
